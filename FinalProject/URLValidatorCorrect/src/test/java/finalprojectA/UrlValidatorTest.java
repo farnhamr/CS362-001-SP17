@@ -28,7 +28,7 @@ import junit.framework.TestCase;
  */
 public class UrlValidatorTest extends TestCase {
 
-   private boolean printStatus = false;
+   private boolean printStatus = true;
    private boolean printIndex = false;//print index that indicates current scheme,host,port,path, query test were using.
 
    public UrlValidatorTest(String testName) {
@@ -95,6 +95,7 @@ public class UrlValidatorTest extends TestCase {
       do {
          StringBuffer testBuffer = new StringBuffer();
          boolean expected = true;
+         //THIS SECTION CREATES THE URLs???
          for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
             int index = testPartsIndex[testPartsIndexIndex];
             ResultPair[] part = (ResultPair[]) testObjects[testPartsIndexIndex];
@@ -104,7 +105,8 @@ public class UrlValidatorTest extends TestCase {
          //System.out.println(testPartsIndex[0]);
          String url = testBuffer.toString();
          boolean result = urlVal.isValid(url);
-         
+
+         //If the resulting URL that was just created is true print it
          if(result == true)
         	 System.out.println(url);
          assertEquals(url, expected, result);
