@@ -355,7 +355,7 @@ public class DomainValidator implements Serializable {
         "ir",                 // Iran
         "is",                 // Iceland
         "it",                 // Italy
-        
+        //BUG HERE: The rest of the country codes are gone.
     };
 
     private static final String[] LOCAL_TLDS = new String[] {
